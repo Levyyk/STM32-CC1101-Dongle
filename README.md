@@ -2,8 +2,9 @@
 
 Custom USB dongle featuring **STM32F030F4P6** + **CC1101** RF transceiver + **CH340N** USB-UART bridge. A full hardware project built from scratch — schematic and PCB design in Altium Designer, firmware, and hands-on debugging.
 
-![Board photo](docs/board-photo.jpg)
-<!-- TODO: заміни на реальне фото готової плати -->
+| Front | Back |
+|---|---|
+| ![Board front](docs/front.png) | ![Board back](docs/back.png) |
 
 ---
 
@@ -30,11 +31,11 @@ All schematic and PCB design was done in **Altium Designer**.
 - **SWD header** — dedicated programming/debug interface for flashing and debugging via ST-Link.
 - **PCB stack-up considerations** — evaluated Core vs. Prepreg material choices and controlled impedance requirements for the RF-adjacent traces near the CC1101.
 
-![Schematic](docs/schematic.png)
-<!-- TODO: додай експорт схеми -->
+<!-- TODO: додай docs/schematic.png (експорт схеми з Altium) і розкоментуй рядок нижче -->
+<!-- ![Schematic](docs/schematic.png) -->
 
-![PCB layout](docs/pcb-layout.png)
-<!-- TODO: додай вигляд трасування плати -->
+<!-- TODO: додай docs/pcb-layout.png (вигляд трасування плати) і розкоментуй рядок нижче -->
+<!-- ![PCB layout](docs/pcb-layout.png) -->
 
 ---
 
