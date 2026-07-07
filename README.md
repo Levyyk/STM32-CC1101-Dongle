@@ -84,15 +84,12 @@ Some of the practical considerations addressed during the design process:
 - **Clock reference** — an 8 MHz HSE oscillator circuit was added for a stable, accurate clock source to the MCU, rather than relying solely on the internal RC oscillator.
 - **Debug/development support** — a dedicated SWD_debug header and a Debug_LED were included on the board to simplify bring-up, flashing, and troubleshooting via ST-Link.
 
-<!-- TODO: якщо хочеш, додай сюди 1-2 конкретні деталі "чому саме такий номінал резистора" чи "чому саме такий стек шарів обрав" — це найцінніше для рекрутера -->
-
 ---
 
 ## What I'd Improve Next
 
-<!-- TODO: 2-3 реальні пункти, що зробив би інакше в наступній ревізії -->
--
--
+- **Add test points** on key signal lines (SPI, UART, power rails) to make future debugging and validation easier without probing fine-pitch pins.
+- **Formalize impedance calculations** for the RF-adjacent traces near the CC1101, rather than relying on general stack-up guidelines, to have documented confidence in the design.
 
 ---
 
@@ -108,5 +105,5 @@ Some of the practical considerations addressed during the design process:
 
 ## Author
 
-**Levik** — Telecommunications & Radio Engineering student, Lviv Polytechnic National University
-[GitHub](https://github.com/levyyk) · [Portfolio](https://levyyk.github.io/portfolio/)
+**Levyk** — Telecommunications & Radio Engineering student, Lviv Polytechnic National University
+[GitHub](https://github.com/levyyk) ·
