@@ -42,19 +42,6 @@ The system is structured around three functional zones:
 
 The CC1101 is a sub-GHz RF transceiver operating at **3.3V only** — VCC and all I/O pins are **not 5V tolerant**, which was a key constraint driving the power rail design (dedicated 3.3RF supply, see Block Diagram above).
 
-| Pin | Function |
-|---|---|
-| GND | Ground |
-| VCC | Power input (3.3V) |
-| GDO0 | General digital output |
-| CSN | Chip select |
-| SCK | SPI clock line |
-| MOSI | Digital input |
-| MISO / GDO1 | Digital output |
-| GDO2 | Second digital output |
-
----
-
 ## Schematic & PCB Design (Altium Designer)
 
 All schematic and PCB design was done in **Altium Designer**.
