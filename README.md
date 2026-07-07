@@ -40,7 +40,7 @@ All schematic and PCB design was done in **Altium Designer**.
 **PCB layers:**
 | Top layer | Bottom layer |
 |---|---|
-| ![Top layer](docs/pcb-top.png) | ![Bottom layer](docs/pcb-bottom.png) |
+| ![Top layer](docs/pcb-layout-top.png) | ![Bottom layer](docs/pcb-layout-bottom.png) |
 
 **Board dimensions:**
 ![Board size](docs/size.png)
