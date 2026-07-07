@@ -31,11 +31,10 @@ All schematic and PCB design was done in **Altium Designer**.
 - **SWD header** — dedicated programming/debug interface for flashing and debugging via ST-Link.
 - **PCB stack-up considerations** — evaluated Core vs. Prepreg material choices and controlled impedance requirements for the RF-adjacent traces near the CC1101.
 
-<!-- TODO: додай docs/schematic.png (експорт схеми з Altium) і розкоментуй рядок нижче -->
-<!-- ![Schematic](docs/schematic.png) -->
+![Schematic](docs/schematic.png) -->
 
-<!-- TODO: додай docs/pcb-layout.png (вигляд трасування плати) і розкоментуй рядок нижче -->
-<!-- ![PCB layout](docs/pcb-layout.png) -->
+
+![PCB layout](docs/pcb-layout.png) -->
 
 ---
 
@@ -49,13 +48,6 @@ All schematic and PCB design was done in **Altium Designer**.
 - Programmed and debugged via **SWD (ST-Link)**
 
 ```
-firmware/        - STM32CubeIDE project
-docs/            - schematics, PCB exports, photos
-```
-
-<!-- TODO: додай короткий приклад коду ініціалізації CC1101, якщо хочеш показати стиль коду -->
-
----
 
 ## Design Challenges & Solutions
 
