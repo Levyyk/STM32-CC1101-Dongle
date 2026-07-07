@@ -1,8 +1,11 @@
 # STM32 CC1101 USB Dongle
 
-Custom USB dongle featuring **STM32F030F4P6** + **CC1101** RF transceiver + **CH340N** USB-UART bridge. A full hardware project built from scratch — schematic and PCB design in Altium Designer, firmware, and hands-on debugging.
+Custom USB dongle design featuring **STM32F030F4P6** + **CC1101** RF transceiver + **CH340N** USB-UART bridge.
+A complete schematic and PCB design project built in Altium Designer — from component selection to a production-ready layout.
 
-| Front | Back |
+> **Note:** This is a design-stage project — the board has not been manufactured/assembled. The repository showcases the schematic and PCB design process rather than a physical build or firmware implementation.
+
+| Front (3D) | Back (3D) |
 |---|---|
 | ![Board front](docs/front.png) | ![Board back](docs/back.png) |
 
@@ -10,12 +13,12 @@ Custom USB dongle featuring **STM32F030F4P6** + **CC1101** RF transceiver + **CH
 
 ## Overview
 
-This project is a compact USB dongle for interfacing with sub-GHz RF devices via the CC1101 transceiver. The STM32F030F4P6 handles SPI communication with the CC1101 and exposes data to a host PC through a CH340N USB-to-UART bridge.
+This project is a compact USB dongle designed for interfacing with sub-GHz RF devices via the CC1101 transceiver. The STM32F030F4P6 is intended to handle SPI communication with the CC1101 and expose data to a host PC through a CH340N USB-to-UART bridge.
 
 **Core components:**
 | Component | Role |
 |---|---|
-| STM32F030F4P6 | Main MCU (Cortex-M0), handles SPI ↔ CC1101 and UART ↔ CH340N |
+| STM32F030F4P6 | Main MCU (Cortex-M0), SPI ↔ CC1101 and UART ↔ CH340N |
 | CC1101 | Sub-GHz RF transceiver (315/433/868/915 MHz) |
 | CH340N | USB-to-UART bridge for host communication |
 
@@ -31,34 +34,37 @@ All schematic and PCB design was done in **Altium Designer**.
 - **SWD header** — dedicated programming/debug interface for flashing and debugging via ST-Link.
 - **PCB stack-up considerations** — evaluated Core vs. Prepreg material choices and controlled impedance requirements for the RF-adjacent traces near the CC1101.
 
-![Schematic](docs/schematic.png) -->
+**Schematic (PDF):**
+[📄 docs/schematic.pdf](docs/schematic.pdf)
 
+**PCB layers:**
+| Top layer | Bottom layer |
+|---|---|
+| ![Top layer](docs/pcb-top.png) | ![Bottom layer](docs/pcb-bottom.png) |
 
-![PCB layout](docs/pcb-layout.png) -->
+**Board dimensions:**
+![Board size](docs/size.png)
 
 ---
 
-## Firmware
+## Programming
 
-- Developed in **STM32CubeIDE** (STM32F0 HAL/LL)
-- Handles:
-  - SPI initialization and register configuration of the CC1101
-  - RF packet transmission/reception
-  - UART bridging of data to/from the host PC via CH340N
-- Programmed and debugged via **SWD (ST-Link)**
+The board is designed to be flashed and debugged via **SWD** using an **ST-LINK/V2** programmer.
 
-```
+🔗 [ST-LINK/V2 — official product page (STMicroelectronics)](https://www.st.com/en/development-tools/st-link-v2.html)
+
+---
 
 ## Design Challenges & Solutions
 
-Some of the practical issues encountered during development:
+Some of the practical considerations addressed during the design process:
 
-- **Signal integrity on SPI/UART lines** — added series termination resistors after observing reflections/noise on high-speed digital signals between MCU and peripherals.
+- **Signal integrity on SPI/UART lines** — added series termination resistors to dampen reflections/noise on high-speed digital lines between MCU and peripherals.
 - **USB robustness** — designed protection circuitry (polyfuse + TVS) to guard against overcurrent and ESD events on the USB port.
 - **PCB material selection** — weighed Core vs. Prepreg options for the stack-up, considering controlled impedance requirements for RF-sensitive routing near the CC1101.
-- **SWD programming setup** — verified correct wiring and pin mapping for reliable flashing/debugging through ST-Link.
+- **SWD programming header** — verified correct wiring and pin mapping for reliable flashing/debugging through ST-Link.
 
-<!-- TODO: тут головне — додай конкретний кейс. Наприклад: "Спочатку прошивка не флешилась через ST-Link — виявилось, що... Вирішив, що..." Це найважливіша секція для рекрутера. -->
+<!-- TODO: якщо хочеш, додай сюди 1-2 конкретні деталі "чому саме такий номінал резистора" чи "чому саме такий стек шарів обрав" — це найцінніше для рекрутера -->
 
 ---
 
@@ -75,8 +81,8 @@ Some of the practical issues encountered during development:
 - Schematic capture & PCB design in Altium Designer (including custom library parts)
 - Signal integrity considerations for high-speed digital and RF-adjacent traces
 - USB interface protection design (ESD/overcurrent)
-- Embedded firmware development on STM32 (SPI, UART)
-- Hardware debugging via SWD/ST-Link
+- PCB stack-up and material selection for controlled impedance
+- SWD debug interface design
 
 ---
 
